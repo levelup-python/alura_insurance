@@ -9,3 +9,6 @@ PyTest;
 Jupyter;
 NumPy;
 Pandas;
+
+Nome: Paloma Vieira Ferraz;
+Email pferraz@mag.com.br;
