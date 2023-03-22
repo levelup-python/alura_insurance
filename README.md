@@ -8,3 +8,8 @@ PyTest;
 Jupyter;
 NumPy;
 Pandas;
+
+**Informações:**
+1 Diego
+2 abc@email
+3 etc
