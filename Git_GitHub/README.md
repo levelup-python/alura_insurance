@@ -7,7 +7,11 @@ O projeto **Comex** é um sistema de _e-commerce marketplace_. Seu objetivo é p
 - Tecnologias utilizadas no projeto Alura
 
 a. Python
+
 b. PyTest
-c.Jupyter
-d.Numpy
-e.Pandas
+
+c. Jupyter
+
+d. Numpy
+
+e. Pandas
