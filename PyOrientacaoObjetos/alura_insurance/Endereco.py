@@ -6,3 +6,7 @@ class Endereco:
         self.cep = cep
         self.estado = estado
         self.cidade = cidade
+
+
+dados = Endereco('Cidade nova', '21',
+                 'ap 1023', '4320978', 'RJ', 'Rio de Janeiro')

@@ -1,5 +1,5 @@
-import Contato
-import Endereco
+import alura_insurance.Contato as Contato
+import alura_insurance.Endereco as Endereco
 
 
 class Beneficiario:

@@ -1,5 +1,5 @@
-import alura_insurance.Contato as Contato
-import alura_insurance.Endereco as Endereco
+from alura_insurance.Contato import Contato
+from alura_insurance.Endereco import Endereco
 
 
 class Segurado:
