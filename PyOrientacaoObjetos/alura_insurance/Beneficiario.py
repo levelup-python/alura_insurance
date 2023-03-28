@@ -14,14 +14,14 @@ class TipoBeneficiario(Enum):
 
 class Beneficiario:
     def __init__(self, cliente=Cliente, endereco=Endereco, contato=Contato, tipo=TipoBeneficiario):
-        self.endereco = endereco
-        self.contato = contato
-        self.__tipo = tipo
-        self.cliente = cliente
+        self._endereco = endereco
+        self._contato = contato
+        self._tipo = tipo
+        self._cliente = cliente
 
     @property
     def tipo(self):
-        return self.__tipo
+        return self._tipo
 
 
 dados = Beneficiario(('Ana', 'Barreto', '00/45/4466', '943892619278512'),
@@ -30,4 +30,4 @@ dados = Beneficiario(('Ana', 'Barreto', '00/45/4466', '943892619278512'),
                      ('21 99985 3145', '21 3222 6666', '21 0000 9999', 'ana@hotmail.com'), 1)
 print(dados)
 print(
-    f'dados pessoais: {dados.cliente}, {dados.endereco}, {dados.contato}, {dados.tipo}')
+    f'dados pessoais: {dados._cliente}, {dados._endereco}, {dados._contato}, {dados._tipo}')

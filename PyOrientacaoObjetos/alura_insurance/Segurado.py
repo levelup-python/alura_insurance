@@ -9,8 +9,8 @@ from Apolice import Apolice
 class Segurado:
     def __init__(self, cliente=Cliente, endereco=Endereco, contato=Contato,
                  beneficiario=Beneficiario, apolice=Apolice):
-        self.endereco = endereco
-        self.contato = contato
-        self.cliente = cliente
-        self.beneficiario = beneficiario
-        self.apolice = apolice
+        self._endereco = endereco
+        self._contato = contato
+        self._cliente = cliente
+        self._beneficiario = beneficiario
+        self._apolice = apolice
