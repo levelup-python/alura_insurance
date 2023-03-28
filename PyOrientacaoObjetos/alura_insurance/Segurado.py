@@ -6,7 +6,8 @@ from Beneficiario import Beneficiario
 
 
 class Segurado:
-    def __init__(self, cliente=Cliente, endereco=Endereco, contato=Contato, beneficiario=Beneficiario):
+    def __init__(self, cliente=Cliente, endereco=Endereco, contato=Contato,
+                 beneficiario=Beneficiario):
         self.endereco = endereco
         self.contato = contato
         self.cliente = cliente
