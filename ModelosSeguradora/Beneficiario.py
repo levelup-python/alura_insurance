@@ -1,3 +1,12 @@
+from enum import Enum
+
+class TipoBeneficiario(Enum):
+    PAI = 1
+    MÃE = 2
+    FILHOS = 3
+    OUTROS = 4
+
+
 class Beneficiario:
 
     def __init__(self, nome, sobrenome, data_nascimento, cpf, rg, tipo, endereco, contato):
@@ -13,4 +22,8 @@ class Beneficiario:
     
     def nome_completo(self): 
        return ("{} {}".format(self.__nome.title(), self.__sobrenome.title()))
+    
+    @property
+    def tipo(self):
+        return self.__tipo.name
     
