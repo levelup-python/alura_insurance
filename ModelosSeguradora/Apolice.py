@@ -9,6 +9,9 @@ class StatusApolice(Enum):
 
 class TipoApolice(Enum):
     VIDA = auto()
+    CARRO = auto()
+    CASA = auto()
+    VIAGEM = auto()
 
 class Apolice:
 

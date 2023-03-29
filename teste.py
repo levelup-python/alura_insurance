@@ -4,12 +4,14 @@ from ModelosSeguradora.Corretor import *
 from ModelosSeguradora.Beneficiario import *
 from ModelosSeguradora.Endereco import *
 from ModelosSeguradora.Contato import *
+from ModelosSeguradora.Pessoa import *
 
 # Faremos uma cliente chamada Ana que tem duas apólices ativas na seguradora com o mesmo corretor, Joao, e cujo beneficario é sua filha Clara.
 
 # Definindo os objetos de cada classe:
 ## Para a definicao de contato e endereco usaremos as respectivas classes
 
+#ana = Pessoa
 endereco_ana = Endereco("X", "203", "Y", "Rio de Janeiro", "RJ", "Brasil")
 contato_ana = Contato(99998888, 11112222, 33334444, "anasilva@gmail.com")
 contato_joao = Contato(77779898, 21212121, 75986352, "joaosantoscorretagem@gmail.com")
@@ -35,3 +37,5 @@ print("Valor do prêmio total que a segurada Ana paga é {} reais".format(segura
 print("Valor do beneficio total que a segurada Ana paga é {} reais".format(segurado1.beneficio_total()))
 print("Valor do total de comissão que o corretor Joao recebe é {} reais".format(corretor1.comissao_total()))
 
+print(segurado1.nome_completo())
+print(beneficiario1.nome_completo())
