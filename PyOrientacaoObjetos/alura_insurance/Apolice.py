@@ -20,6 +20,37 @@ class Apolice:
         self._criacao_apolice = criacao_apolice
         self._status = status
 
+    @property
+    def numero(self):
+        return self._numero
+
+    @property
+    def valor_do_premio(self):
+        return self._valor_do_premio
+
+    @property
+    def segurado(self):
+        return self._segurado
+
+    @property
+    def corretor(self):
+        return self._corretor
+
+    @property
+    def fim_vigencia(self):
+        return self._fim_vigencia
+
+    @property
+    def criacao_apolice(self):
+        return self._criacao_apolice
+
+    @property
+    def status(self):
+        return self._status
+
     @staticmethod
     def tipo_apolice():
-        return {"VIDA"}
+        return "VIDA"
+
+
+Apolice.tipo_apolice()

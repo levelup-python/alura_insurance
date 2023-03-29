@@ -23,6 +23,18 @@ class Beneficiario:
     def tipo(self):
         return self._tipo
 
+    @property
+    def cliente(self):
+        return self._cliente
+
+    @property
+    def endereco(self):
+        return self._endereco
+
+    @property
+    def contato(self):
+        return self._contato
+
 
 dados = Beneficiario(('Ana', 'Barreto', '00/45/4466', '943892619278512'),
                      ('Cidade nova', '21', 'ap 1023',
@@ -30,4 +42,4 @@ dados = Beneficiario(('Ana', 'Barreto', '00/45/4466', '943892619278512'),
                      ('21 99985 3145', '21 3222 6666', '21 0000 9999', 'ana@hotmail.com'), 1)
 print(dados)
 print(
-    f'dados pessoais: {dados._cliente}, {dados._endereco}, {dados._contato}, {dados._tipo}')
+    f'dados pessoais: {dados.cliente}, {dados.endereco}, {dados.contato}, {dados.tipo}')

@@ -14,3 +14,23 @@ class Corretor:
         self._numero_susep = numero_susep
         self._apolice = apolice
         self._contato = contato
+
+    @property
+    def nome_corretor(self):
+        return self._nome_corretor
+
+    @property
+    def sobrenome_corretor(self):
+        return self._sobrenome_corretor
+
+    @property
+    def numero_susep(self):
+        return self._numero_susep
+
+    @property
+    def apolice(self):
+        return self._apolice
+
+    @property
+    def contato(self):
+        return self._contato
