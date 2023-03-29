@@ -6,19 +6,19 @@ from Apolice import Apolice
 
 
 class Segurado(Cliente, Endereco):
-    def __init__(self, _nome, _sobrenome, _cpf, _rg, _data_nascimento, _rua, _numero, _complemento,
-                 _cep, _estado, _cidade, contato=Contato,
+    def __init__(self, nome, sobrenome, cpf, rg, data_nascimento, rua, numero, complemento,
+                 cep, estado, cidade, contato=Contato,
                  beneficiario=Beneficiario, apolice=Apolice):
         self._contato = contato
         self._beneficiario = beneficiario
         self._apolice = apolice
-        super(Cliente).__init__(self, _nome,
-                                _sobrenome, _cpf, _rg, _data_nascimento)
+        super(Cliente).__init__(self, nome,
+                                sobrenome, cpf, rg, data_nascimento)
         super(Endereco).__init__(
-            _rua, _numero, _complemento, _cep, _estado, _cidade)
+            rua, numero, complemento, cep, estado, cidade)
 
     def nome_completo(self):
-        print(f' nome completo: {self._nome} {self._sobrenome}')
+        print(f' nome completo: {self.nome} {self.sobrenome}')
 
     @ property
     def contato(self):
