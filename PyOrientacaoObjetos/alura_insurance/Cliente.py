@@ -6,6 +6,9 @@ class Cliente:
         self._rg = rg
         self._data_nascimento = data_nascimento
 
+    def calcular_nome_completo(self):
+        return f"{self.nome} {self.sobrenome}"
+
     @property
     def nome(self):
         return self._nome
@@ -13,15 +16,3 @@ class Cliente:
     @property
     def sobrenome(self):
         return self._sobrenome
-
-    @property
-    def cpf(self):
-        return self._cpf
-
-    @property
-    def rg(self):
-        return self._rg
-
-    @property
-    def data_nascimento(self):
-        return self._data_nascimento

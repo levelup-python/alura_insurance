@@ -3,22 +3,20 @@ from Endereco import Endereco
 from Cliente import Cliente
 from Beneficiario import Beneficiario
 from Apolice import Apolice
+from Corretor import Corretor
 
 
-class Segurado(Cliente, Endereco):
-    def __init__(self, nome, sobrenome, cpf, rg, data_nascimento, rua, numero, complemento,
-                 cep, estado, cidade, contato=Contato,
-                 beneficiario=Beneficiario, apolice=Apolice):
-        self._contato = contato
+class Segurado():
+
+    def __init__(self, cliente=Cliente, endereco=Endereco, contato=Contato,
+                 beneficiario=Beneficiario, apolice=Apolice,
+                 corretor=Corretor):
+        self._cliente = cliente
         self._beneficiario = beneficiario
         self._apolice = apolice
-        super(Cliente).__init__(self, nome,
-                                sobrenome, cpf, rg, data_nascimento)
-        super(Endereco).__init__(
-            rua, numero, complemento, cep, estado, cidade)
-
-    def nome_completo(self):
-        print(f' nome completo: {self.nome} {self.sobrenome}')
+        self._corretor = corretor
+        self._endereco = endereco
+        self._contato = contato
 
     @ property
     def contato(self):
@@ -31,7 +29,3 @@ class Segurado(Cliente, Endereco):
     @ property
     def apolice(self):
         return self._apolice
-
-
-# cliente1 = Cliente()
-# cliente1._nome
