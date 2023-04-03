@@ -66,15 +66,3 @@ len(Corretor1.comissao_total)
 Corretor1._apolices[0].comissao
 
 Corretor1.comissao_total
-
-cliente1 = Segurado(segurado1, endereco1, contato1,
-                    benef1, apolice1, Corretor1)
-
-cliente1.contato._email
-
-cliente1.corretor.comissao_total
-
-cliente1.corretor
-
-cliente1.cliente.nome_completo()
-cliente1.beneficiario.nome_completo()
