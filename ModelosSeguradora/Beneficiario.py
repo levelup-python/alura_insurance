@@ -1,5 +1,6 @@
 from enum import Enum
 from ModelosSeguradora.Pessoa import *
+import datetime
 
 class TipoBeneficiario(Enum):
     PAI = 1
@@ -10,7 +11,7 @@ class TipoBeneficiario(Enum):
 
 class Beneficiario(Pessoa):
 
-    def __init__(self, nome, sobrenome, data_nascimento, cpf, rg, tipo, endereco, contato):
+    def __init__(self, nome, sobrenome, data_nascimento, cpf, rg, endereco, contato, tipo):
         super().__init__(nome, sobrenome, data_nascimento, cpf, rg)
         self._tipo = tipo
         self._endereco = endereco
@@ -19,4 +20,7 @@ class Beneficiario(Pessoa):
     @property
     def tipo(self):
         return self._tipo.name
+    
+    def __str__(self):
+        return (super().__str__())
     
