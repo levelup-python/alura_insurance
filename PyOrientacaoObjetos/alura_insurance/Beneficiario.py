@@ -28,3 +28,7 @@ class Beneficiario():
     @property
     def contato(self):
         return self._contato
+
+    @property
+    def cliente(self):
+        return self._cliente

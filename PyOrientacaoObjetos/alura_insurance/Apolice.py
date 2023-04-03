@@ -11,10 +11,14 @@ class Apolice:
         self.comissao = self.calcular_comissao()
         self.status = status
 
+    @property
+    def valor_do_premio(self):
+        return self._valor_do_premio
+
     def calcular_comissao(self):
         if self.tipo == 'VIDA':
-            comissao = 0.005 * self.valor_do_premio + 100 + \
-                (1000 if self.valor_do_premio > 850000 else 0)
+            comissao = 0.05 * self.valor_do_premio + 100 + \
+                (1000 if self.valor_do_premio > 10000 else 0)
         elif self.tipo == 'CARRO':
             comissao = 75.50 + 0.0035 * self.valor_do_premio
         elif self.tipo == 'CASA':
@@ -24,7 +28,3 @@ class Apolice:
         else:
             comissao = 0
         return comissao
-
-    @property
-    def valor_do_premio(self):
-        return self._valor_do_premio

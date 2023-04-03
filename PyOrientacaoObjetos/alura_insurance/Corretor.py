@@ -6,18 +6,22 @@ from Contato import Contato
 
 class Corretor:
     def __init__(
-        self, nome_corretor, sobrenome_corretor, numero_susep, comissao_total, apolices=List[
-            Apolice], contato=Contato):
+            self, nome_corretor, sobrenome_corretor, numero_susep, apolices=List[Apolice], contato=Contato):
         self._nome_corretor = nome_corretor
         self._sobrenome_corretor = sobrenome_corretor
         self._numero_susep = numero_susep
         self._apolices = apolices
         self._contato = contato
-        self.comissao_total = comissao_total
+        self.comissao_total = self.calcular_comissao_total()
 
-    def calcular_comissao_total(self, apolices):
-        for apolice in apolices:
-            self.comissao_total += apolice.comissao
+    def __getitem__(self, item):
+        return self._apolices[item]
+
+    def calcular_comissao_total(self):
+        comissao_total = 0
+        for apolice in self._apolices:
+            comissao_total += apolice.comissao
+        return comissao_total
 
     @property
     def nome_corretor(self):
@@ -28,9 +32,13 @@ class Corretor:
         return self._sobrenome_corretor
 
     @property
-    def numero_susep(self):
-        return self._numero_susep
+    def apolices(self):
+        return self._apolices
 
     @property
     def contato(self):
         return self._contato
+
+    # @property
+    # def comissao_total(self):
+    #     return self._comissao_total
