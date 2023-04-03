@@ -42,3 +42,21 @@ class Corretor:
     # @property
     # def comissao_total(self):
     #     return self._comissao_total
+
+
+apolice1 = Apolice('238575', 5000, 'segurado1', '23/04/2020',
+                   '22/04/1999', 'VIDA', 'ativo')
+apolice2 = Apolice('000000', 5000, 'segurado1', '00/00/2020',
+                   '22/04/1999', 'VIAGEM', 'ativo')
+
+contato_corretor = Contato(
+    '21 9875 9845', '21 2345 6778', '21 4567 2324', 'antonio@gmail.com')
+Corretor1 = Corretor('Antonio', 'goncalves', '234567', [
+                     apolice1, apolice2], contato_corretor)
+Corretor1._apolices
+
+len(Corretor1._apolices)
+
+Corretor1._apolices[0].comissao
+
+Corretor1.comissao_total
