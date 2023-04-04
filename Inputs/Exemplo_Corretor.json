@@ -1,0 +1,12 @@
+{
+    "nome": "Monteiro",
+    "sobrenome": "Lobato",
+    "susep": "12345.001234/2009-99",
+    "apolices": [],
+    "contato": {
+      "celular":  "(11)99999-9999",
+      "tel_residencial": "(11)2222-2222",
+      "tel_comercial": "(11)3333-3333",
+      "email": "corretor@alura.com.br"
+    }
+  }
