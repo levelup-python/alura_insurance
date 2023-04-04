@@ -8,3 +8,8 @@ b. PyTest;
 c. Jupyter;
 d. NumPy;
 e. Pandas;
+
+Dados sobre o desenvolvedor do projeto:
+a. Nome: Camila Leal
+b. E-mail: coleal@mag.com.br
+c. Tel.: (21) xxxx-xxxx
