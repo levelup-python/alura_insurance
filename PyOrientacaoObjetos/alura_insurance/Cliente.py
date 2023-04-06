@@ -1,9 +1,11 @@
-from datetime import date, datetime, timedelta
 import re
+from datetime import date
+from dateutil.relativedelta import relativedelta
+
 
 
 class Cliente:
-    def __init__(self, nome: str, sobrenome: str, cpf: str, rg: str, data_nascimento: date):
+    def __init__(self, nome, sobrenome, cpf, rg, data_nascimento: date):
         self.__nome = nome
         self.__sobrenome = sobrenome
         self.__cpf = cpf
@@ -31,8 +33,10 @@ class Cliente:
         return self.__sobrenome
 
     def __set_sobrenome(self, value):
-        if value is None or len(value) < 2:
+        if value is None:
             raise ValueError("O sobrenome não pode ser nulo", value)
+        if len(value) < 2:
+            raise ValueError("O obrenome não pode ter menos de dois", value) 
 
         self.__sobrenome = value
 
@@ -41,8 +45,9 @@ class Cliente:
         return self.__rg
 
     def __set_rg(self, value):
-        if value is None or len(value) < 2:
+        if value is None:
             raise ValueError("O rg não pode ser nulo", value)
+
 
         self.__rg = value
 
@@ -52,10 +57,10 @@ class Cliente:
 
     def __set_cpf(self, value):
         padrao_cpf = re.compile(
-            re.compile(r'\d{3}[.-]?\d{3}[.-]?\d{3}[.-]?\d{2}'))
+            re.compile(r'^\d{3}\.\d{3}\.\d{3}-\d{2}$'))
         if value is not padrao_cpf:
             raise ValueError(
-                "CPF precisa ter o formato correto (ex: 123.456.789-10) ou (12345678910)")
+                "CPF precisa ter o formato correto (ex: 123.456.789-10) ou (12345678910)", value)
 
         self.__cpf = value
 
@@ -64,9 +69,10 @@ class Cliente:
         return self.__data_nascimento
 
     def __set_data_nascimento(self, value):
+        
+        dt_nasc = date.fromisoformat(value)
+        idade = relativedelta(date.today(), dt_nasc).years
 
-        idade = (date.today() - datetime.strptime(value,
-                 '%Y-%m-%d').date()) // timedelta(days=365.2425)
         if idade < 18:
             raise ValueError("A idade precisa ser maior do que 18")
 
@@ -74,5 +80,5 @@ class Cliente:
         print(f"{self.nome} {self.sobrenome}")
 
 
-segurado1 = Cliente('', '', '111.111.111-11', '', '01/01/1980')
+segurado1 = Cliente('Ana', 'Ana', '062-624-697-11', '35346', '2021/01/01')
 segurado1.nome_completo()
