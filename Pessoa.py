@@ -1,19 +1,4 @@
 from Endereco import Endereco
-<<<<<<< HEAD
-from datetime import date
-
-
-class Pessoa():
-    def __init__(self, primeiro_nome, sobrenome, data_nasc: date, cpf, rg, endereco: Endereco, contato):
-        self._primeiro_nome = primeiro_nome
-        self._sobrenome = sobrenome
-        self._data_nasc = data_nasc
-        self._cpf = cpf
-        self._rg = rg
-        self._endereco = endereco
-        self._contato = contato
-
-=======
 from datetime import date, timedelta
 from numpy import timedelta64
 from dateutil.relativedelta import relativedelta
@@ -61,14 +46,10 @@ class Pessoa():
             return print("Email incorreto")
         
         
->>>>>>> a4403410edb3e7e5638198a8eb857276565068c7
     def nome_completo(self):
         return f"{self._primeiro_nome.title()} {self._sobrenome.title()}"
 
     def __str__(self):
-<<<<<<< HEAD
-        return f"{self._primeiro_nome} {self._sobrenome} {self._data_nasc.strftime('%d/%m/%y')}"
-=======
         return f"{self._primeiro_nome} {self._sobrenome} - {self._data_nasc.strftime('%d/%m/%Y')}"
 
 
@@ -83,4 +64,3 @@ formato_cpf = reg.compile('\d{3}\.\d{3}\.\d{3}\-\d{2}')
 cpf = "58.784.477-97"
 formato_cpf.search(cpf)
 
->>>>>>> a4403410edb3e7e5638198a8eb857276565068c7
