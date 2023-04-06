@@ -1,7 +1,5 @@
 import json
 
-# Definindo a classe Corretor
-
 
 class Corretor:
     def __init__(self, nome, susep, apolices, contato):
