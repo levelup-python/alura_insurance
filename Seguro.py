@@ -3,10 +3,9 @@ from Beneficiario import Beneficiario
 from Calculadora import Calculadora
 from Corretor import Corretor   
 from Endereco import Endereco
-from Pessoa import Pessoa
 from Segurado import Segurado
 from datetime import date
-from Contato import Contato
+
 
      
 endereco1 = Endereco("Merces", 43, "casa", "123", "Rio de Janeiro", "RJ")
