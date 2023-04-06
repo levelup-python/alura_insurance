@@ -18,13 +18,14 @@ contato_ana = Contato(99998888, 11112222, 33334444, "anasilva@gmail.com")
 contato_joao = Contato(77779898, 21212121, 75986352, "joaosantoscorretagem@gmail.com")
 
 # Definindo o beneficiario
-beneficiario1 = Beneficiario("Clara","Silva","08/09/2010","00000000060","9191991991",TipoBeneficiario.FILHOS, "endereco", "contato")
+beneficiario1 = Beneficiario("Clara","Silva","08/09/2010","000.000.000-60","9191991991",TipoBeneficiario.FILHOS, "endereco", "contato")
 
 ## Definindo o segurado
-segurado1= Segurado("ana","silva","25/08/1986","12345678900","223334441",endereco_ana.endereco_completo(),contato_ana.contato_completo(),beneficiario1)
+segurado1= Segurado("ana","silva","25/08/1986","123.456.789-00","223334441",endereco_ana.endereco_completo(),contato_ana.contato_completo(),[beneficiario1])
 
+print(len('15414600000000000'))
 ## Definindo Corretor
-corretor1 = Corretor("Joao", "santos", "AB123", contato_joao)
+corretor1 = Corretor("Joao", "santos", "15414600000000000", contato_joao)
 
 ## Definindo as apolices
 apolice1 = Apolice(1, 143, 150000, segurado1, corretor1, '01/01/2022', '31/12/2025','01/12/2021', StatusApolice.ATIVA, TipoApolice.VIDA)
@@ -38,6 +39,9 @@ segurado1.incluir_apolice(apolice1)
 segurado1.incluir_apolice(apolice2)
 
 
+print(segurado1.nome_completo())
+
+"""
 print(corretor1.apolices)
 print(segurado1.apolices)
 
@@ -49,6 +53,7 @@ print(apolice2)
 
 calc1 = CalculadoraComissao([apolice1, apolice2])
 print(calc1.calcula_comissao())
+"""
 
 # Testando as classes criadas:
 #print("Valor do beneficio da apólice1 é {} reais".format(apolice1.valor_beneficio))
