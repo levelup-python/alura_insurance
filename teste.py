@@ -13,7 +13,7 @@ from ModelosSeguradora.CalculadoraComissao import *
 # Definindo os objetos de cada classe:
 ## Para a definicao de contato e endereco usaremos as respectivas classes
 
-endereco_ana = Endereco("X", "203", "Y", "Rio de Janeiro", "RJ", "Brasil")
+endereco_ana = Endereco("X", "203", "complemento","Y", "Rio de Janeiro", "RJ", "Brasil")
 contato_ana = Contato(99998888, 11112222, 33334444, "anasilva@gmail.com")
 contato_joao = Contato(77779898, 21212121, 75986352, "joaosantoscorretagem@gmail.com")
 
@@ -23,7 +23,6 @@ beneficiario1 = Beneficiario("Clara","Silva","08/09/2010","000.000.000-60","9191
 ## Definindo o segurado
 segurado1= Segurado("ana","silva","25/08/1986","123.456.789-00","223334441",endereco_ana.endereco_completo(),contato_ana.contato_completo(),[beneficiario1])
 
-print(len('15414600000000000'))
 ## Definindo Corretor
 corretor1 = Corretor("Joao", "santos", "15414600000000000", contato_joao)
 

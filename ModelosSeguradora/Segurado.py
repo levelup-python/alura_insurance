@@ -1,6 +1,7 @@
 from ModelosSeguradora.Pessoa import *
 import datetime
 from dateutil.relativedelta import relativedelta
+import ModelosSeguradora.Valida
 
 class Segurado(Pessoa):
 
@@ -9,7 +10,7 @@ class Segurado(Pessoa):
         self.__set_data_nascimento(data_nascimento)
         self._endereco = endereco
         self._contato = contato
-        self.__set_beneficiarios(beneficiarios)
+        self._beneficiarios = ModelosSeguradora.Valida.ValidaQtdBeneficiarios(beneficiarios)
         self._apolices = []
     
     def __str__(self):
@@ -29,17 +30,6 @@ class Segurado(Pessoa):
             raise ValueError("Segurado precisa ter pelo menos 18 anos")
     
         self._data_nascimento = value
-
-    @property
-    def beneficiarios(self):
-        return self.__beneficiarios 
-    
-    def __set_beneficiarios(self, value):
-
-        if len(value) > 10:
-            raise ValueError("Não pode ter mais que 10 beneficiários")
-        
-        self.__beneficiarios = value
 
 
     def premio_total(self):
