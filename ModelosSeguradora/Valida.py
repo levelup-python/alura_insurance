@@ -99,4 +99,35 @@ def valida_cadastro_susep(value):
                     
     return value
 
+def valida_valor_maior_zero(value, nome_atributo):
+    if value <= 0:
+        raise ValueError(f"O atributo {nome_atributo} deve ser maior que zero.")
+    return value
+
+def valida_data_futura(value, nome_atributo):
+
+    data_atual = datetime.date.today()    
+    
+    if value == None or len(value) == 0:
+        raise ValueError(f"A data de {nome_atributo} não pode ser nula")
+    
+    value = datetime.date(int(value[6:11]), int(value[3:5]),int(value[0:2]))
+    if value <= data_atual:
+        raise ValueError(f"A data de {nome_atributo} precisa ser uma data futura")
+        
+    return value
+
+
+def valida_data_passado(value):
+
+    data_atual = datetime.date.today()    
+    
+    if value == None or len(value) == 0:
+        raise ValueError("A data de criacao não pode ser nula")
+    
+    value = datetime.date(int(value[6:11]), int(value[3:5]),int(value[0:2]))
+    if value > data_atual:
+        raise ValueError("A data de criacao precisa ser uma data passada")
+        
+    return value
 

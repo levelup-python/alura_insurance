@@ -1,6 +1,7 @@
 from enum import Enum
 from enum import auto
 import datetime
+import ModelosSeguradora.Valida
 
 class StatusApolice(Enum):
     ATIVA = auto() 
@@ -18,13 +19,13 @@ class Apolice:
 
     def __init__(self, numero, valor_premio, valor_beneficio, segurado, corretor, inicio_vigencia, fim_vigencia, data_criacao, status, tipo):
         self._numero = numero
-        self._valor_beneficio = valor_beneficio
-        self._valor_premio = valor_premio
+        self._valor_beneficio = ModelosSeguradora.Valida.valida_valor_maior_zero(valor_beneficio)
+        self._valor_premio = ModelosSeguradora.Valida.valida_valor_maior_zero(valor_premio)
         self._segurado = segurado
         self._corretor = corretor
-        self._inicio_vigencia = datetime.date(int(inicio_vigencia[6:11]), int(inicio_vigencia[3:5]),int(inicio_vigencia[0:2]))
-        self._fim_vigencia = datetime.date(int(fim_vigencia[6:11]), int(fim_vigencia[3:5]),int(fim_vigencia[0:2]))
-        self._data_criacao = datetime.date(int(data_criacao[6:11]), int(data_criacao[3:5]),int(data_criacao[0:2]))
+        self._inicio_vigencia = ModelosSeguradora.Valida.valida_data_futura(inicio_vigencia, inicio_vigencia)
+        self._fim_vigencia = ModelosSeguradora.Valida.valida_data_futura(fim_vigencia, fim_vigencia)
+        self._data_criacao = ModelosSeguradora.Valida.valida_data_passado(data_criacao, data_criacao)
         self._status = status
         self._tipo = tipo
 
