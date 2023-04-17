@@ -74,7 +74,5 @@ Corretor1 = Corretor('Antonio', 'goncalves', '234567', [
 
 # cliente1.corretor.comissao_total
 
-# cliente1.corretor
-
 # cliente1.cliente.nome_completo()
 # cliente1.beneficiario.nome_completo()
