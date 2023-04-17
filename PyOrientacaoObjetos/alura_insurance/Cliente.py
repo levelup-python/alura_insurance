@@ -3,7 +3,6 @@ from datetime import date
 from dateutil.relativedelta import relativedelta
 
 
-
 class Cliente:
     def __init__(self, nome, sobrenome, cpf, rg, data_nascimento: date):
         self.__nome = nome
@@ -36,7 +35,7 @@ class Cliente:
         if value is None:
             raise ValueError("O sobrenome não pode ser nulo", value)
         if len(value) < 2:
-            raise ValueError("O obrenome não pode ter menos de dois", value) 
+            raise ValueError("O obrenome não pode ter menos de dois", value)
 
         self.__sobrenome = value
 
@@ -47,7 +46,6 @@ class Cliente:
     def __set_rg(self, value):
         if value is None:
             raise ValueError("O rg não pode ser nulo", value)
-
 
         self.__rg = value
 
@@ -69,7 +67,7 @@ class Cliente:
         return self.__data_nascimento
 
     def __set_data_nascimento(self, value):
-        
+
         dt_nasc = date.fromisoformat(value)
         idade = relativedelta(date.today(), dt_nasc).years
 
@@ -78,7 +76,3 @@ class Cliente:
 
     def calcular_nome_completo(self):
         print(f"{self.nome} {self.sobrenome}")
-
-
-segurado1 = Cliente('Ana', 'Ana', '062-624-697-11', '35346', '2021/01/01')
-segurado1.nome_completo()
