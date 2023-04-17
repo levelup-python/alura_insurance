@@ -15,7 +15,7 @@ class Cliente:
         self.__set_cpf(cpf)
         self.__set_rg(rg)
         self.__set_data_nascimento(data_nascimento)
-        self.nome_completo = self.calcular_nome_completo
+        self.nome_completo = self.calcular_nome_completo()
 
     @property
     def nome(self):
@@ -35,7 +35,7 @@ class Cliente:
         if value is None:
             raise ValueError("O sobrenome não pode ser nulo", value)
         if len(value) < 2:
-            raise ValueError("O obrenome não pode ter menos de dois", value)
+            raise ValueError("O sobrenome não pode ter menos de dois", value)
 
         self.__sobrenome = value
 
@@ -54,9 +54,8 @@ class Cliente:
         return self.__cpf
 
     def __set_cpf(self, value):
-        padrao_cpf = re.compile(
-            re.compile(r'^\d{3}\.\d{3}\.\d{3}-\d{2}$'))
-        if value is not padrao_cpf:
+        padrao_cpf = re.compile(r'^\d{3}\.?\d{3}\.?\d{3}-?\d{2}$')
+        if not padrao_cpf.match(value):
             raise ValueError(
                 "CPF precisa ter o formato correto (ex: 123.456.789-10) ou (12345678910)", value)
 
@@ -75,4 +74,8 @@ class Cliente:
             raise ValueError("A idade precisa ser maior do que 18")
 
     def calcular_nome_completo(self):
-        print(f"{self.nome} {self.sobrenome}")
+        return f"{self.nome} {self.sobrenome}"
+
+
+cliente = Cliente("Ana Paula", "Silva", "123.456.78910", "", "1990-01-01")
+cliente.calcular_nome_completo()
