@@ -1,3 +1,4 @@
+from typing import List
 from Contato import Contato
 from Endereco import Endereco
 from Cliente import Cliente
@@ -9,14 +10,24 @@ from Corretor import Corretor
 class Segurado():
 
     def __init__(self, cliente=Cliente, endereco=Endereco, contato=Contato,
-                 beneficiario=Beneficiario, apolice=Apolice,
+                 beneficiario=List[Beneficiario], apolices=List[Apolice],
                  corretor=Corretor):
         self._cliente = cliente
         self._beneficiario = beneficiario
-        self._apolice = apolice
+        self._apolices = apolices
         self._corretor = corretor
         self._endereco = endereco
         self._contato = contato
+        self.premio_total = self.calcular_premio_total()
+
+    def __getitem__(self, item):
+        return self._apolices[item]
+
+    def calcular_premio_total(self):
+        premio_total = 0
+        for apolice in self._apolices:
+            premio_total += apolice.valor_do_premio
+        return premio_total
 
     @ property
     def contato(self):
@@ -27,8 +38,8 @@ class Segurado():
         return self._beneficiario
 
     @ property
-    def apolice(self):
-        return self._apolice
+    def apolices(self):
+        return self._apolices
 
     @ property
     def cliente(self):
@@ -39,8 +50,8 @@ class Segurado():
         return self._corretor
 
 
-segurado1 = Cliente('João', 'Silva', '111.111.111-11', '2222222', '01/01/1980')
-segurado1.nome_completo()
+segurado1 = Cliente('João', 'Silva', '111.111.111-11', '2222222', '1980-02-01')
+segurado1.calcular_nome_completo()
 
 endereco1 = endereco_benef1 = Endereco(
     'av brandao', '50', 'ap 2', '2024055', 'RJ', 'rio de janeiro')
@@ -48,12 +59,12 @@ contato1 = Contato('21 9 8756 4323', '21 2345 6789',
                    '21 4532 3456', 'joao@hotmail.com')
 contato_benef1 = Contato('21 9876 4355', '00 0000 0000',
                          '00 0000 0000', "ana@hotmail.com")
-benef1 = Cliente('Ana', 'Andrade', '123-123-343-45', '763458', '12/34/56')
+benef1 = Cliente('Ana', 'Andrade', '123.123.343-45', '763458', '1980-02-01')
 beneficiario1 = Beneficiario(benef1, endereco_benef1, contato_benef1, 1)
 
-apolice1 = Apolice('238575', 5000, 'segurado1', '23/04/2020',
+apolice1 = Apolice('238575', 5000, 'segurado1', '1980-02-01',
                    '22/04/1999', 'VIDA', 'ativo')
-apolice2 = Apolice('000000', 5000, 'segurado1', '00/00/2020',
+apolice2 = Apolice('000000', 5000, 'segurado1', '1980-02-01',
                    '22/04/1999', 'VIAGEM', 'ativo')
 
 contato_corretor = Contato(
@@ -67,8 +78,11 @@ Corretor1 = Corretor('Antonio', 'goncalves', '234567', [
 
 # Corretor1.comissao_total
 
+
 # cliente1 = Segurado(segurado1, endereco1, contato1,
-#                     benef1, apolice1, Corretor1)
+#                     benef1, [apolice1, apolice2], Corretor1)
+
+# cliente1.premio_total
 
 # cliente1.contato._email
 

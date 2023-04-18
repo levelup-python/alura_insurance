@@ -27,10 +27,10 @@ class Contato:
     def __set_email(self, value):
         padrao_email = re.compile(
             r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$')
-        if value is not padrao_email:
+        if not padrao_email.match(value):
             raise ValueError("O email precisa ter um formato valido", value)
 
         self.__email = value
 
 
-a = Contato('2184735368', '3426374532', '65457786', '84352895')
+a = Contato('2184735368', '3426374532', '65457786', 'adad@gmail.com')

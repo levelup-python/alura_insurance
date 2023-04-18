@@ -1,9 +1,6 @@
-from Segurado import Segurado
-
-
 class Apolice:
 
-    def __init__(self, numero_susep, valor_do_premio, segurado: Segurado,
+    def __init__(self, numero_susep, valor_do_premio, segurado,
                  fim_vigencia, inicio_vigencia, tipo, status):
         self._numero_susep = numero_susep
         self._valor_do_premio = valor_do_premio

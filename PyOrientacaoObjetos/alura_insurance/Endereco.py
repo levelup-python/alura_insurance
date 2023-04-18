@@ -65,4 +65,4 @@ class Endereco:
         self.__estado = value
 
 
-endereco1 = Endereco('rah gyg', '76', 'ap 56', '234873856', 'SPO', 'dorhe')
+endereco1 = Endereco('rah gyg', '76', 'ap 56', '234873856', 'SP', 'dorhe')

@@ -1,5 +1,4 @@
 from typing import List
-
 from Apolice import Apolice
 from Contato import Contato
 
@@ -53,10 +52,10 @@ contato_corretor = Contato(
     '21 9875 9845', '21 2345 6778', '21 4567 2324', 'antonio@gmail.com')
 Corretor1 = Corretor('Antonio', 'goncalves', '234567', [
                      apolice1, apolice2], contato_corretor)
-Corretor1._apolices
+# Corretor1._apolices
 
-len(Corretor1._apolices)
+# len(Corretor1._apolices)
 
-Corretor1._apolices[0].comissao
+# Corretor1._apolices[0].comissao
 
-Corretor1.comissao_total
+# Corretor1.comissao_total
