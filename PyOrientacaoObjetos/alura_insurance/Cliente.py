@@ -22,8 +22,11 @@ class Cliente:
         return self.__nome
 
     def __set_nome(self, value):
-        if value is None or len(value) < 2:
+        if value is None:
             raise ValueError("O nome não pode ser nulo", value)
+        if len(value) < 2:
+            raise ValueError(
+                "O nome precisa ter no mínimo 2 caracteres", value)
 
         self.__nome = value
 
@@ -77,5 +80,5 @@ class Cliente:
         return f"{self.nome} {self.sobrenome}"
 
 
-cliente = Cliente("Ana Paula", "Silva", "123.456.78910", "", "1990-01-01")
+cliente = Cliente("Ana", "Silva", "123.456.78910", "", "1990-01-01")
 cliente.calcular_nome_completo()
