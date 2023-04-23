@@ -1,6 +1,4 @@
 class Apolice:
-    self._apolices = apolices
-
     def __init__(self, nome, sobrenome, cadastro_susep, celular, telefone_residencial, telefone_comercial, email, apolices):
         self._nome = nome
         self._sobrenome = sobrenome
