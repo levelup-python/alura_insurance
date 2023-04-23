@@ -1,3 +1,5 @@
+import datetime
+
 class Segurado:
     def __init__(self, nome, sobrenome, data_nascimento, cpf, rg):
         self._nome = nome
@@ -11,9 +13,7 @@ class Segurado:
         return ("{} {}".format(self._nome.title(), self._sobrenome.title()))
 
     def __str__(self):
-        return (
-            "Nome: {} - Data de Nascimento: {} - CPF: {} - RG: {}".format(self.nome_completo(), self._data_nascimento,
-                                                                          self._cpf, self._rg))
+        return ("Nome: {} - Data de Nascimento: {} - CPF: {} - RG: {}".format(self.nome_completo(),self._data_nascimento,self._cpf, self._rg))
 
 class Endereco:
     def __init__(self, rua, numero, complemento, cep, estado, cidade, pais):
