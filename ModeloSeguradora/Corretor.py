@@ -14,17 +14,22 @@ class Apolice:
     def nome_completo(self):
         return ("{} {}".format(self._nome.title(), self._sobrenome.title()))
 
-    def contato(self):
-        return ({"Celular": self._celular, "Telefone Residencial": self._telefone_residencial,
-                 "Telefone Comercial": self._telefone_comercial, "Email": self._email})
+    def __str__(self):
+        return ("Nome: {} - Cadastro SUSEP: {}".format(self.nome_completo(), str(self._cadastro_susep)))
+
 
     def incluir_apolice(self, apolice):
         self._apolices.append(apolice.__str__())
+
+
+    def comissao_total(self):
+        soma = 0
+        for apolice in self._apolices:
+            soma += (apolice.valor_premio*0.01)
+        return soma
 
     @property
     def apolices(self):
         return self._apolices
 
 
-    def __str__(self):
-        return ("Nome: {} - Cadastro SUSEP: {}".format(self.nome_completo(), str(self._cadastro_susep)))
