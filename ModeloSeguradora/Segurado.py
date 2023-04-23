@@ -40,3 +40,5 @@ class Contato:
     def contato(self):
         return ({"Celular": self._celular, "Telefone Residencial": self._telefone_residencial,
                  "Telefone Comercial": self._telefone_comercial, "Email": self._email})
+
+
