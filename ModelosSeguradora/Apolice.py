@@ -19,13 +19,13 @@ class Apolice:
 
     def __init__(self, numero, valor_premio, valor_beneficio, segurado, corretor, inicio_vigencia, fim_vigencia, data_criacao, status, tipo):
         self._numero = numero
-        self._valor_beneficio = ModelosSeguradora.Valida.valida_valor_maior_zero(valor_beneficio)
-        self._valor_premio = ModelosSeguradora.Valida.valida_valor_maior_zero(valor_premio)
+        self._valor_beneficio = ModelosSeguradora.Valida.valida_valor_maior_zero(valor_beneficio, valor_beneficio)
+        self._valor_premio = ModelosSeguradora.Valida.valida_valor_maior_zero(valor_premio, valor_premio)
         self._segurado = segurado
         self._corretor = corretor
         self._inicio_vigencia = ModelosSeguradora.Valida.valida_data_futura(inicio_vigencia, inicio_vigencia)
         self._fim_vigencia = ModelosSeguradora.Valida.valida_data_futura(fim_vigencia, fim_vigencia)
-        self._data_criacao = ModelosSeguradora.Valida.valida_data_passado(data_criacao, data_criacao)
+        self._data_criacao = ModelosSeguradora.Valida.valida_data_passado(data_criacao)
         self._status = status
         self._tipo = tipo
 
@@ -45,8 +45,3 @@ class Apolice:
     def tipo(self):
         return self._tipo.name
     
-    def __str__(self):
-        return ("Apólice: {} - Status: {} - Tipo: {} - Segurado: {} - Corretor: {} - Prêmio: {} - Benefício: {}".
-                format(str(self._numero),str(self.status), str(self.tipo), str(self._segurado.nome_completo()), 
-                       str(self._corretor.nome_completo()), str(self.valor_premio), str(self.valor_beneficio)))
-

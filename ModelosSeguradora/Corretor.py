@@ -1,4 +1,5 @@
 import ModelosSeguradora.Valida
+from ModelosSeguradora.CalculadoraComissao import CalculadoraComissao
 
 class Corretor:
 
@@ -10,23 +11,20 @@ class Corretor:
         self._apolices = []
 
 
-
     def nome_completo(self): 
        return ("{} {}".format(self._nome.title(), self._sobrenome.title()))
     
     def __str__(self):
         return ("Nome: {} - Cadastro SUSEP: {}".format(self.nome_completo(), str(self._cadastro_susep)) )
     
-    def comissao_total(self):
-        soma = 0
-        for apolice in self._apolices:
-            soma += (apolice.valor_premio*0.01) 
-        return soma
     
     def incluir_apolice(self, apolice):
-        self._apolices.append(apolice.__str__()) 
+        self._apolices.append(apolice) 
     
     @property
     def apolices(self):
         return self._apolices
     
+    def comissao_total(self):
+        x = CalculadoraComissao(self._apolices)
+        return x.calcula_comissao()

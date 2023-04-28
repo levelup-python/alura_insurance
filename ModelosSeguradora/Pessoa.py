@@ -9,7 +9,7 @@ class Pessoa:
         self._cpf = ModelosSeguradora.Valida.valida_cpf(cpf)
         self._rg = ModelosSeguradora.Valida.valida_vazio_ou_nulo(rg, "rg")
 
-    def nome_completo(self):
+    def nome_completo(self):    
         return ("{} {}".format(self._nome.title(), self._sobrenome.title()))
     
     def __str__(self):

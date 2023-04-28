@@ -27,17 +27,16 @@ segurado1= Segurado("ana","silva","25/08/1986","123.456.789-00","223334441",ende
 corretor1 = Corretor("Joao", "santos", "15414600000000000", contato_joao)
 
 ## Definindo as apolices
-apolice1 = Apolice(1, 143, 150000, segurado1, corretor1, '01/01/2022', '31/12/2025','01/12/2021', StatusApolice.ATIVA, TipoApolice.VIDA)
-apolice2 = Apolice(2, 56, 25000, segurado1, corretor1, '01/01/2023', '31/12/2023', '25/12/2022', StatusApolice.ATIVA, TipoApolice.VIDA)
+apolice1 = Apolice(1, 143, 150000, segurado1, corretor1, '01/01/2024', '31/12/2025','01/12/2021', StatusApolice.ATIVA, TipoApolice.VIDA)
+apolice2 = Apolice(2, 56, 25000, segurado1, corretor1, '01/01/2024', '31/12/2023', '25/12/2022', StatusApolice.ATIVA, TipoApolice.VIDA)
 
 ## Incluindo as apolices no corretor e segurado
 corretor1.incluir_apolice(apolice1)
 corretor1.incluir_apolice(apolice2)
-
 segurado1.incluir_apolice(apolice1)
 segurado1.incluir_apolice(apolice2)
 
-
+print(segurado1.premio_total())
 print(segurado1.nome_completo())
 
 """

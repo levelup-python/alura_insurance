@@ -30,7 +30,7 @@ class Segurado(Pessoa):
         return soma
     
     def incluir_apolice(self, apolice):
-        self._apolices.append(apolice.__str__()) 
+        self._apolices.append(apolice) 
     
     @property
     def apolices(self):
