@@ -5,9 +5,14 @@ Python 3;
 PyTest;
 Jupyter;
 NumPy;
+<<<<<<< HEAD
 Pandas;
 Nome;
-
 Email;
 
+=======
+Pandas;b
+Nome;
+Email;
+>>>>>>> ft-informacoes-desenvolvedor
 etc...
