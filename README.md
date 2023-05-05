@@ -7,3 +7,7 @@ PyTest;
 Jupyter;
 NumPy;
 Pandas;
+
+informacoes do desenvolvedor
+nome=vitor campagnani carneiro
+email=vcarneiro@mag.com.br
