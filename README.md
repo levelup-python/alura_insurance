@@ -6,3 +6,8 @@ PyTest;
 Jupyter;
 NumPy;
 Pandas;
+Nome;
+
+Email;
+
+etc...
