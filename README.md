@@ -5,4 +5,7 @@ Python 3;
 PyTest;
 Jupyter;
 NumPy;
-Pandas;
+Pandas;b
+Nome;
+Email;
+etc...
