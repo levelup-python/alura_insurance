@@ -25,8 +25,8 @@ class Segurado:
         self.__contato_email = contato_email
         self.__apolices = apolices
 
-        def nome_completo(self):
-            print("O nome completo do segurado é: ".format(self.__primeiro_nome, self.__sobrenome))
+    def nome_completo(self):
+        print(f"O nome completo do segurado é: {self.__primeiro_nome} {self.__sobrenome}")
 
 class Beneficiario:
 
