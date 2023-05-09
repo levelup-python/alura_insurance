@@ -1,11 +1,11 @@
 class Segurado:
 
     def __init__(self, primeiro_nome, sobrenome, nascimento, cpf, rg,
-                 endereco_rua, endereco_numero,endereco_complemento,endereco_cep,
+                 endereco_rua, endereco_numero, endereco_complemento, endereco_cep,
                  endereco_estado, endereco_cidade,
                  contato_celular, contato_telefone, contato_residencial,
                  contato_telefone_comercial,
-                 contato_email, beneficiarios,apolices):
+                 contato_email, beneficiarios, apolices):
         self.__primeiro_nome = primeiro_nome
         self.__sobrenome = sobrenome
         self.__nascimento = nascimento
@@ -24,6 +24,9 @@ class Segurado:
         self.__contato_telefone_comercial = contato_telefone_comercial
         self.__contato_email = contato_email
         self.__apolices = apolices
+
+        def nome_completo(self):
+            print("O nome completo do segurado é: ".format(self.__primeiro_nome, self.__sobrenome))
 
 class Beneficiario:
 
@@ -77,3 +80,6 @@ class Corretor:
         self.__contato_residencial = contato_residencial
         self.__contato_telefone_comercial = contato_telefone_comercial
         self.__contato_email = contato_email
+
+
+
