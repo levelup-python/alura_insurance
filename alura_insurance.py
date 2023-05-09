@@ -53,8 +53,8 @@ class Beneficiario:
         self.__contato_email = contato_email
 
 class Apolice:
-    def __init__(self, numero, tipo='VIDA', valor_premio, valor_beneficio, segurado,
-                 corretor, vigencia,data_criacao,status):
+    def __init__(self, numero, valor_premio, valor_beneficio, segurado,
+                 corretor, vigencia, data_criacao, status, tipo='VIDA'):
         self.__numero = numero
         self.__tipo = tipo
         self.__valor_premio = valor_premio
