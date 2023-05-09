@@ -26,7 +26,7 @@ class Segurado:
         self.__apolices = apolices
 
     def nome_completo(self):
-        print(f"O nome completo do segurado é: {self.__primeiro_nome} {self.__sobrenome}")
+        return f"{self.__primeiro_nome} {self.__sobrenome}"
 
 class Beneficiario:
 
