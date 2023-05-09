@@ -52,6 +52,28 @@ class Beneficiario:
         self.__contato_telefone_comercial = contato_telefone_comercial
         self.__contato_email = contato_email
 
-class Apolice
+class Apolice:
+    def __init__(self, numero, tipo='VIDA', valor_premio, valor_beneficio, segurado,
+                 corretor, vigencia,data_criacao,status):
+        self.__numero = numero
+        self.__tipo = tipo
+        self.__valor_premio = valor_premio
+        self.__valor_beneficio = valor_beneficio
+        self.__segurado = segurado
+        self.__corretor = corretor
+        self.__vigencia = vigencia
+        self.__data_criacao = data_criacao
+        self.__status = status
 
-
+class Corretor:
+    def __init__(self, primeiro_nome, sobrenome, numero_susep, apolices, contato_celular, contato_telefone,
+                 contato_residencial, contato_telefone_comercial, contato_email):
+        self.__primeiro_nome = primeiro_nome
+        self.__sobrenome = sobrenome
+        self.__numero_susep = numero_susep
+        self.__apolices = apolices
+        self.__contato_celular = contato_celular
+        self.__contato_telefone = contato_telefone
+        self.__contato_residencial = contato_residencial
+        self.__contato_telefone_comercial = contato_telefone_comercial
+        self.__contato_email = contato_email
