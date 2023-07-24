@@ -1,0 +1,11 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 100000000,
+            "driver": "SQLite",
+            "database": "${workspaceFolder:Python_Data_Science}/database.db",
+            "name": "DATABASE_SQLITE"
+        }
+    ],
+    "sqltools.useNodeRuntime": true
+}
